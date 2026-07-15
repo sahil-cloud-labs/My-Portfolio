@@ -1,30 +1,20 @@
-import { Code, Bug } from "lucide-react";
+import { Cloud } from "lucide-react";
 
 export default function Experience() {
-  const experiences = [
-    {
-      icon: <Bug className="w-6 h-6 text-red-600" />,
-      title: "Software Test Engineer (QA Apprentice)",
-      place: "Bridging Technology • Mohali, India",
-      detail: "Jan 2026 – Present",
-      points: [
-        "Performed UI testing and identified bugs to improve application quality",
-        "Collaborated with developers to debug and resolve defects",
-        "Improved application stability and issue resolution efficiency",
-      ],
-    },
-    {
-      icon: <Code className="w-6 h-6 text-green-600" />,
-      title: "Frontend Developer Intern",
-      place: "Rupyz • Gurugram, India",
-      detail: "Aug 2025 – Dec 2025",
-      points: [
-        "Developed scalable and responsive UI using React.js and Tailwind CSS",
-        "Integrated REST APIs for dynamic and real-time user experiences",
-        "Optimized performance and managed complex state using Redux Toolkit",
-      ],
-    },
-  ];
+  const experience = {
+    icon: <Cloud className="w-6 h-6 text-blue-600" />,
+    title: "Cloud Engineer",
+    company: "Infosol Technosol Pvt. Ltd.",
+    location: "Gurugram, India",
+    duration: "Feb 2025 – Present",
+    points: [
+      "Designed, deployed, and managed cloud infrastructure on AWS using services like EC2, S3, IAM, VPC, CloudFront, Route 53, and RDS.",
+      "Built and maintained CI/CD pipelines using GitHub Actions with self-hosted runners to automate application deployments.",
+      "Containerized applications using Docker and managed deployments on Amazon ECS with ECR.",
+      "Provisioned and managed cloud resources using Terraform, following Infrastructure as Code (IaC) best practices.",
+      "Monitored applications and infrastructure using CloudWatch, Prometheus, and Grafana to ensure high availability and performance.",
+    ],
+  };
 
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-10">
@@ -32,36 +22,30 @@ export default function Experience() {
         Work Experience
       </h2>
 
-      {/* Same grid system as Education */}
-      <div className="grid gap-6 sm:grid-cols-2">
-        {experiences.map((exp, idx) => (
-          <div
-            key={idx}
-            className="flex items-start space-x-4 bg-white shadow-md hover:shadow-lg transition rounded-xl p-5"
-          >
-            <div className="flex-shrink-0">{exp.icon}</div>
+      <div className="grid gap-6">
+        <div className="flex items-start space-x-4 bg-white shadow-md hover:shadow-lg transition rounded-xl p-5">
+          <div className="flex-shrink-0">{experience.icon}</div>
 
-            <div>
-              <h3 className="font-semibold text-lg sm:text-xl text-gray-800">
-                {exp.title}
-              </h3>
+          <div>
+            <h3 className="font-semibold text-lg sm:text-xl text-gray-800">
+              {experience.title}
+            </h3>
 
-              <p className="text-gray-600 text-sm sm:text-base">
-                {exp.place}
-              </p>
+            <p className="text-gray-600 text-sm sm:text-base">
+              {experience.company} • {experience.location}
+            </p>
 
-              <p className="text-gray-500 text-sm mb-2">
-                {exp.detail}
-              </p>
+            <p className="text-gray-500 text-sm mb-2">
+              {experience.duration}
+            </p>
 
-              <ul className="list-disc list-inside text-gray-700 text-sm sm:text-base space-y-1">
-                {exp.points.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
-            </div>
+            <ul className="list-disc list-inside text-gray-700 text-sm sm:text-base space-y-1">
+              {experience.points.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+            </ul>
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
