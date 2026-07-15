@@ -5,7 +5,7 @@ export default function Experience() {
     icon: <Cloud className="w-6 h-6 text-blue-600" />,
     title: "Cloud Engineer",
     company: "Infosol Technosol Pvt. Ltd.",
-    location: "Gurugram, India",
+    location: "Bangalore, India (Remote)",
     duration: "Feb 2025 – Present",
     points: [
       "Designed, deployed, and managed cloud infrastructure on AWS using services like EC2, S3, IAM, VPC, CloudFront, Route 53, and RDS.",
